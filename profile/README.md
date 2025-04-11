@@ -2,105 +2,112 @@
 
 > The future of machine learning is decentralized — we're building the interface to make it usable.
 
-SwarmMarket is a marketplace-style frontend built on top of Gensyn’s RL Swarm protocol. It allows users to submit reinforcement learning or LLM fine-tuning jobs and dispatch them across a decentralized network of training nodes. Our system simulates real-time training, cost estimation, on-chain job logs, and swarm learning — making Gensyn’s infrastructure understandable, usable, and demoable.
+SwarmMarket is a marketplace-style frontend built on top of Gensyn’s RL Swarm protocol. It allows users to submit reinforcement learning or LLM fine-tuning jobs, dispatch them across a decentralized network of training nodes, and track training, billing, and protocol-level verification in real-time. This project brings Gensyn’s testnet vision to life with a clean, intuitive user experience.
 
 ---
 
 ## 🔭 Project Vision
 
-Gensyn is creating the trustless infrastructure for decentralized ML training. We're creating the **first user-facing layer** that sits on top of that — a simple and powerful interface where users can:
+While Gensyn provides the protocol and infrastructure for decentralized ML training, SwarmMarket provides the **first user-facing layer** that makes this power accessible.
 
-- Upload training jobs
-- Estimate costs
-- Watch decentralized training progress
-- View smart contract interactions
-- Receive verifiable models and final invoices
+With SwarmMarket, users can:
+- Submit training jobs with configuration and budget
+- Watch jobs get picked up by swarm nodes
+- Track model performance and real-time costs
+- Simulate smart contract-based job verification
+- Download trained models and view full invoices
 
 ---
 
 ## 💡 Why This Matters
 
-Modern AI requires massive compute, often gated behind expensive cloud providers. Gensyn envisions a world where training happens across a global network of machines — verifiable, distributed, and open.
+Centralized AI infrastructure is costly, opaque, and restricted to big players. Gensyn’s decentralized compute protocol aims to change that.
 
-**SwarmMarket** answers the question:  
-> “Once that protocol exists, how do users actually interact with it?”
+SwarmMarket shows **how real users can interact** with this infrastructure:
+> “Once the protocol exists, how do I actually use it to train my models?”
 
 ---
 
 ## 🧑‍💻 End-User Flow
 
 1. **Submit a Training Job**
-   - Upload a script or choose a preset (e.g., CartPole, LLaMA fine-tune)
-   - Define dataset, model type, budget, and deadline
+   - Choose a model (e.g., CartPole PPO, LunarLander, Mini-LLaMA)
+   - Enter dataset (IPFS/GCS/S3 URL)
+   - Set training config (epochs, batch size, learning rate)
+   - Define budget (in GNS tokens)
 
-2. **Receive Cost Estimate**
-   - Our engine simulates training time and cost
-   - User pre-authorizes payment via mock wallet
+2. **Cost Estimation**
+   - System simulates time & cost based on config
+   - User pre-authorizes budget via simulated wallet
 
 3. **Swarm Training Begins**
-   - Nodes pick up jobs
-   - Users track real-time logs, progress, and swarm coordination
-   - Simulated on-chain logs display node activity
+   - Nodes pick up job
+   - Training happens across nodes in a simulated swarm
+   - Live metrics and logs are shown to the user
 
-4. **Receive Results + Invoice**
-   - Trained model returned (or simulated)
-   - On-chain logs finalized
-   - Remaining balance refunded
+4. **Job Completion + Output**
+   - Model file is downloadable
+   - Invoice shows full cost breakdown
+   - Smart contract logs simulate decentralized verification
 
 ---
 
 ## 🛠️ Tech Stack
 
-### Backend
-- Python + Flask (API)
-- Stable-Baselines3 (RL Training — e.g., PPO on CartPole)
-- Simulated swarm weight-sharing logic
-- SQLite / in-memory store for logs and job history
+### 🖥 Frontend
+- **Next.js** + **Tailwind CSS** (UI Framework)
+- **Recharts** (Training metric visualizations)
+- **Axios** (API calls)
+- **Optional**: Monaco editor (IDE mode for advanced users)
 
-### Frontend
-- Next.js + Tailwind CSS
-- Recharts / Chart.js for visualizations
-- Job submission + node explorer UI
-- Live metrics and token meter simulation
+### 🧠 Backend
+- **FastAPI** (Job submission + status API)
+- **Stable-Baselines3** + **Gym** (RL training engine)
+- **SQLite / in-memory storage** (Job & wallet data)
+- **Multi-process Python simulation** for swarm behavior
 
-### Simulated On-Chain Layer
-- JSON-based mock smart contract logs
-- (Optional) Hardhat + web3.py for real contract simulation
+### 🪙 Smart Contract / Billing Simulation
+- JSON-based log events for protocol interactions
+- Simulated token system (GNS) with wallet pre-auth + refunds
+- Optional: Hardhat + Web3.py for real smart contract layer
 
 ---
 
-## 💰 Billing System
+## 💰 Token & Billing Logic
 
-- Estimated cost based on job config (epochs, batch size, env)
-- Simulated GPU/hour pricing
-- User pre-authorizes funds (fake GNS tokens)
-- Final billing computed from actual training duration
-- Remaining funds refunded
+- Pricing simulated per task: `epochs × GNS/unit`
+- Budget “locked” on job start (mock wallet)
+- Live cost meter updates in real-time
+- Refund issued for unused compute
+- Invoices generated at job completion
 
 ---
 
 ## 📊 Key Features
 
-| Feature                       | Description                                      |
-|-------------------------------|--------------------------------------------------|
-| 🧠 Job Submission UI          | Upload scripts, define model/task               |
-| 🔁 Swarm Simulation           | Nodes collaborate to improve model performance  |
-| 📈 Real-time Training Logs    | Watch metrics evolve over time                  |
-| 🌐 Smart Contract Visualizer  | See when nodes pick up and complete jobs        |
-| 💸 Token-based Billing        | Simulated GNS/USDC system with dynamic pricing  |
-| 🧾 Invoice Generator          | Transparent breakdown of compute usage          |
+| Feature                     | Description                                       |
+|-----------------------------|---------------------------------------------------|
+| 🧠 Job Submission UI        | Simple config interface for training jobs         |
+| 🐝 Swarm Node Simulation    | Simulates job pickup, swarm sync, and rewards     |
+| 📈 Training Progress        | Live chart: reward vs episode                     |
+| 🧾 Token Meter & Invoices   | Budget lock, dynamic cost display, full receipt   |
+| 🌐 Smart Contract Logs      | Simulated on-chain events (job accepted, verified)|
+| 🧪 Verification UI          | Logs verifier actions + challenge outcomes        |
+| 💼 IDE Mode (Optional)      | Advanced users can upload configs / code          |
 
 ---
 
-## 🚀 Getting Started (Dev Setup)
+## 🚀 Getting Started
 
 ```bash
-# Backend
+# Backend Setup
 cd backend
+python -m venv venv
+source venv/bin/activate  # or venv\Scripts\activate on Windows
 pip install -r requirements.txt
-python app.py
+uvicorn main:app --reload
 
-# Frontend
+# Frontend Setup
 cd frontend
 npm install
 npm run dev
