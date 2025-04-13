@@ -1,4 +1,11 @@
-# 🐝 SwarmMarket — A Visual Dashboard for Gensyn’s RL Swarm Protocol
+# A Visual Dashboard for Gensyn’s RL Swarm Protocol
+
+<p style="text-align: center; font-size: 4em;">
+    <a href="https://drive.google.com/file/d/19fRpBSP6yJlh4DGQs71IQ7AwFbHT7ZaQ/view?usp=sharing" style="font-weight: bold; color: blue; text-decoration: none;">
+        VIDEO
+    </a>
+</p>
+
 
 ![Alt text](../Gensyn%201.png))
 ![Alt text](../Gensyn%202.png)
@@ -9,8 +16,6 @@ SwarmMarket is a frontend-only visualization dashboard built on top of Gensyn’
 ## Links!
 
 <a href="https://github.com/gensyn-customer/SwarmUI" style="font-weight: bold; color: blue; font-size: 1.2em;">Project Repo</a>
-
-<a href="https://drive.google.com/file/d/19fRpBSP6yJlh4DGQs71IQ7AwFbHT7ZaQ/view?usp=sharing" style="font-weight: bold; color: blue; font-size: 1.2em;">Video Demo</a>
 
 ## 🔭 Project Vision
 
