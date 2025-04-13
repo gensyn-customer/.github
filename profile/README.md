@@ -1,6 +1,6 @@
 # A Visual Dashboard for Gensyn’s RL Swarm Protocol
 
-<p align="center" style="font-size: 50px; font-weight: bold;">
+<p align="center" style="font-size: 200px; font-weight: bold;">
   <a href="https://drive.google.com/file/d/19fRpBSP6yJlh4DGQs71IQ7AwFbHT7ZaQ/view?usp=sharing">VIDEO</a>
 </p>
 
