@@ -1,10 +1,16 @@
 # 🐝 SwarmMarket — A Visual Dashboard for Gensyn’s RL Swarm Protocol
 
-> The future of machine learning is decentralized — we're building the interface that makes it visible, explainable, and usable.
+![Alt text](../Gensyn%201.png))
+![Alt text](../Gensyn%202.png)
 
-SwarmMarket is a frontend-only visualization dashboard built on top of Gensyn’s **RL Swarm protocol**. It presents a real-time view of decentralized AI training jobs as they are distributed across simulated swarm nodes. The interface tracks progress, simulates smart contract logs, and shows how models benefit from collective training — bringing Gensyn’s research and infrastructure to life for users and developers.
+SwarmMarket is a frontend-only visualization dashboard built on top of Gensyn’s **RL Swarm protocol**. It presents a real-time view of decentralized AI training jobs as they are distributed across simulated swarm nodes. 
 
 ---
+## Links!
+
+<a href="https://github.com/gensyn-customer/SwarmUI" style="font-weight: bold; color: blue; font-size: 1.2em;">Project Repo</a>
+
+<a href="https://drive.google.com/file/d/19fRpBSP6yJlh4DGQs71IQ7AwFbHT7ZaQ/view?usp=sharing" style="font-weight: bold; color: blue; font-size: 1.2em;">Video Demo</a>
 
 ## 🔭 Project Vision
 
